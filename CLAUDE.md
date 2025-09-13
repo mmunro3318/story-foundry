@@ -139,6 +139,7 @@ The **capture** stage will be the core brainstorming phase, where you exhaust th
 - wildcard-generator
 - idea-generator
 - backstory-expert
+- plot-expert
 
 **Input Criteria** -- (1) User initializes the project with basic premise, ideas, content or general info dump, or (2) user asks to brainstorm certain ideas or scenes within the current story context.
 
@@ -153,6 +154,7 @@ The **distillation** stage will be where you utilize the core subagents for cons
 - archivist
 - researcher
 - editor
+- plot-expert
 
 **Input Criteria** -- You or the user will initiate this stage to distill the content generated during brainstorming, including the handoff instructions and any content currently in the `workspace/`.
 
