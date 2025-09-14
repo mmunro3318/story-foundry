@@ -1,51 +1,88 @@
-# Distillation-Stage Mode
+# Capture Stage – CLAUDE.md
 
-## Summary & Purpose
+## Purpose
 
-You are helping the author to generate an outline for their scene or novel based upon their current ideas and content. The outline will span the entire scene or novel, and you'll deploy template placeholders with suggested direction for any missing sections, beats, or scenes. Your main goal is to **distil** all the author's ideas and intent into a solid outline.
+Guide brainstorming and information-gathering for a novel project.  
+Draw out the author’s ideas, record them, and prepare materials for Distillation.
+
+---
+
+## Inputs
+
+- Author prompts, notes, or free-form “info dumps”.
+- Files in `projects/<project>/author-notes/`.
+- Optional reference digests prepared by **researcher** (e.g., Truby, Swain, Story Genius).
+
+## Outputs
+
+- `author-notes/session-notes-[##].md` (verbatim record via archivist)
+- `capture-summary.md` (≤300 words: key takeaways + next-step outline plan)
+- Updates to `story-bible.json` and `README.md` (archivist only)
+
+---
 
 ## Subagents
 
-While working with the author, you will proactively use these subagents:
+| Role                   | Purpose                                                           |
+| ---------------------- | ----------------------------------------------------------------- |
+| **archivist**          | Log session text; update bible & README                           |
+| **idea-generator**     | Generate incremental ideas                                        |
+| **wildcard-generator** | Offer orthogonal / unexpected options                             |
+| **backstory-expert**   | Help surface formative events & misbeliefs (Truby / Story Genius) |
+| **plot-expert**        | Identify structural hooks & gaps                                  |
 
-- archivist
-- plot-expert
-- story-architect
-- scene-architect
-- researcher
-- editor
+> _Other craft agents (worldbuilder, dialogue-expert, etc.) may be invoked if the author requests specialised brainstorming._
 
-## Workflow
+---
 
-The **Distillation** stage has two core modes:
+## Phases
 
-1. **Story-Outline** -- you are generating a full outline for the entire novel. For this workflow, you will create the following:
+### 1️⃣ Intake
 
-   1. Foolscap method outline: reference the `foolscap-template.md`
-   2. Anatomy of Story (1): The Seven Key Steps (1-7) -- reference `anatomy-of-story.md`
-   3. Anatomy of Story (2): Middle Escalation (Steps 8-15)
-   4. Anatomy of Story (3): Resolution (Steps 16-22)
+- Primary stance: **listen and record**.
+- Encourage uninterrupted info-dump from author.
+- Archivist mirrors content to `session-notes`.
+- Researcher may prep quick digests if theory prompts are needed.
 
-2. **Scene-Outline** -- you are generating a full outline for the entire scene.
+### 2️⃣ Ideate
 
-### Actions
+- When author wants exploration or feedback:
+  - Run 2× `idea-generator` + 1× `wildcard-generator` in parallel; keep results in `workspace/`.
+  - Use `plot-expert` for premise/goal clarity or structural needs.
+  - Call `backstory-expert` for wounds, ghosts, or misbelief discovery.
 
-- With the first handoff, check for a `capture-summary.md` document in addition to any other context in the current session (if the session was collapsed/compacted or the user initiated the session with certain directions/content). Decide if this will be an outline for **story** or **scene**.
+> These phases can alternate fluidly — follow author intent.
 
-- Preparing for the outlines you will invoke the relevant `scene-architect` or `story-architect` in parallel in order to review the current content and decide on a game plan. This is review only, and they will each write their respective strategy documents to the project `workspace/`: `[scene|story]-outline-strategy.md`. The subagent should appropriate break down the outline work into small functional tasks to work on sequentially, and avoid long one-off attempts to generate the entire document.
+---
 
-- Begin thinking through user content and story theory to generate outline docs one-by-one. The subagent will perform only ONE task at a time, generating their draft to be reviewed by an editor subagent. They'll save their work in the project `workspace/` as `[type]-outline-draft.md` (where `[type]` is a useful tag based on the type of outline they're working on). The editor will review their draft and provide a critique in the form of `[type]-outline-critique.md`.
+## Actions & Handoff
 
-- If there is missing user content to generate certain parts of the outline, the agent should leave them as TODOs in the outline. After completion of the final draft of each outline, the `story-architect` will generate a `todo-strategy.md` document to send back to the **capture** stage for later development.
+1. Keep a lightweight log of subagent suggestions in `workspace/`.
+2. At session end:
+   - Archivist finalises session-notes.
+   - Archivist updates `story-bible.json` and project README (if needed).
+   - Summarise main findings and recommended outline focus in `capture-summary.md`.
+3. Signal readiness for Distillation with:
 
-## Files and Docs
+   /handoff capture
 
-The Outline agents should reference the following documents when relevant to their task:
+### Slash Commands
 
-- `./docs/reference/anatomy-of-story.md`
-- `./docs/reference/scene-and-structure.md`
-- `./docs/reference/story-genius.md`
-- `./docs/templates/scene-card-template.md`
-- `./docs/templates/foolscap-template.md`
+/ingest <path> # Load any supporting docs (optional)
+/idea # Spawn idea-generators
+/wildcard # Spawn wildcard-generator
+/plot # Call plot-expert for strategy memo
+/backstory # Call backstory-expert
+/summary # Produce capture-summary.md
+/handoff capture # Pass work to distillation stage
 
-**Note** a few of these reference files are a little lengthy, with extra context that may not be relevant to the subagent's immediate work. It would be helpful to have the `researcher` subagent study the doc and extract the relevant info into a report to pass off to the relevant outline expert.
+---
+
+## Notes
+
+- Respect project boundaries: never read notes from a different project unless author requests.
+- Keep prose inside `session-notes` exactly as the author gave it; do not edit voice or style.
+- Keep `capture-summary.md` concise and action-oriented:
+  - highlight strongest concepts
+  - list unknowns / gaps
+  - suggest which packet(s) Distillation should begin with.
