@@ -75,7 +75,6 @@ workspace/ # (optional global scratch)
 
 ## Slash Commands (global)
 
-```xml
 /ingest <path> # Index reference docs
 /mode story|scene # Choose outline target
 /packet <name> # Run one packet (brief → draft → critique)
@@ -87,7 +86,6 @@ workspace/ # (optional global scratch)
 /todo # Create todo-strategy.md
 /handoff capture # Pass summary to distillation
 /export # Bundle canonical outputs
-```
 
 ---
 
