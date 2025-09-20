@@ -32,6 +32,23 @@ I'm a huge fan of the following books on writing, and reference their theory hea
    /story_init project_name=my-story include_readme=true
    ```
 
+   Resulting structure:
+
+   ```
+   projects/
+   └── my-story/
+    ├── author-notes/
+    ├── content/
+    │   ├── outlines/
+    │   ├── drafts/
+    │   └── manuscript/
+    ├── workspace/
+    │   ├── scene-cards/
+    │   └── fix_specs/
+    ├── story-bible.json
+    └── README.md
+   ```
+
    > Open the JSON and fill in voice, canon, characters, constraints.
 
 2. **Brainstorm (Capture Stage)**
@@ -62,6 +79,7 @@ Use slash commands (e.g., `/idea`, `/outline_scene`, `/draft_scene`) to interact
      ```
 
 4. **Draft & Polish (Production Stage)**
+
    - Write prose for a scene:
      ```bash
      /draft_scene scene_id=5 focus="Kai confronts sister in scrapyard"
@@ -73,6 +91,12 @@ Use slash commands (e.g., `/idea`, `/outline_scene`, `/draft_scene`) to interact
    - Revise:
      ```bash
      /revise_scene scene_id=5
+     ```
+
+5. **Archive Session (Post Session)**
+   - Archive notes from this session
+     ```bash
+     /archive_session project=my-story include_changelog=true include_index=true
      ```
 
 ✅ At any point, inspect `workspace/` for drafts, critiques, and numbered **fix_specs**.  
