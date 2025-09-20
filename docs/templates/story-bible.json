@@ -1,0 +1,63 @@
+{
+  "voiceSpec": {
+    "comparables": ["Ursula K. Le Guin", "Ocean Vuong"],
+    "do": ["sensory concretes", "subtext over exposition"],
+    "dont": ["modern slang", "meta quips"]
+  },
+  "canon": {
+    "setting": "rusted-orbitals",
+    "era": "post-collapse",
+    "tech": "capacitive relics"
+  },
+  "constraints": {
+    "pov": "close third",
+    "tense": "past",
+    "max_words_per_scene": 1200
+  },
+  "characters": [
+    {
+      "name": "Kai",
+      "role": "protagonist",
+      "storyGoal": "Find sister",
+      "wound": "abandonment",
+      "traits": {
+        "strengths": ["resilient", "loyal"],
+        "flaws": ["impulsive"],
+        "ticks": ["nailbed tapping"]
+      },
+      "arc": "Learns to trust again"
+    }
+  ],
+  "settings": {
+    "locations": [
+      {
+        "name": "Scrapyard",
+        "description": "A maze of twisted metal under faded floodlights"
+      }
+    ],
+    "culture": {
+      "norms": "barter economy",
+      "traditions": "found-object art",
+      "languages": ["Trade Common"]
+    },
+    "history": "Once a mining colony, now a junk haven",
+    "rules": {
+      "technology": "reclaimed relics",
+      "physics": "normal"
+    }
+  },
+  "plot": {
+    "storylines": {
+      "A": "Kai searches for her sister",
+      "B": "Tense alliance with rival scavenger"
+    },
+    "timeline": [{ "event": "Kai arrives at station", "sequence": 1 }]
+  },
+  "researchNotes": [],
+  "assets": {
+    "maps": [],
+    "moodBoards": [],
+    "photos": [],
+    "links": []
+  }
+}

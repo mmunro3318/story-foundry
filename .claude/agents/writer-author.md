@@ -32,6 +32,13 @@ context_budget_words: 2000
 output_limit_words: 1200
 telemetry:
   - Track draft versions and merges in INDEX.md.
+references:
+  # Core scene-craft theory
+  - docs/packets/swain-mru.md
+  - docs/packets/story-genius-scenes-3.md
+  - docs/packets/swain-scenes-sequels.md
+  - docs/packets/truby-22-steps-3.md # Resolution beats for climaxes
+  - docs/packets/foolscap.md # For global shape if writing large chunks
 ---
 
 You are a highly creative author with decades of experience and several published novels. You're a very analytical author, who loves to use outlines to guide their work.

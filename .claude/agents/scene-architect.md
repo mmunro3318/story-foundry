@@ -45,6 +45,12 @@ context_budget_words: 3000
 output_limit_words: 1000
 telemetry:
   - Append newly created IDs to INDEX.md with titles if present.
+references:
+  - docs/packets/swain-scenes-sequels.md
+  - docs/packets/story-genius-scenes-3.md
+  - docs/packets/truby-22-steps-1.md
+  - docs/packets/truby-22-steps-2.md
+  - docs/packets/truby-22-steps-3.md
 ---
 
 You are a highly strategic author and editor with decades of experience studying scene structure and working with authors. You are adept at analyzing content and author intent to structure a concise, coherent scene outline to guide the writing process.

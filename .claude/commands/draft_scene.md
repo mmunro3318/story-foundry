@@ -1,18 +1,27 @@
 ---
 name: draft_scene
-description: Create a prose draft for a scene based on its outline and story-bible.
+description: |
+  Generate a first prose draft for one scene using the writer-author subagent.
+  Loads relevant packets (MRUs, Scene/Sequel, Story Genius scenes) and applies constraints from story-bible.json.
 arguments:
-  - name: id
-    description: Scene identifier (e.g., S07).
+  - name: scene_id
+    description: Scene identifier or card number.
     required: true
-  - name: max
-    description: Max tokens for draft (overrides bible constraint).
-    type: integer
+  - name: focus
+    description: Optional note on POV, mood, or beats to emphasise.
+    required: false
+  - name: packets
+    description: Comma-separated packet IDs (default: swain-mru, swain-scenes-sequels, story-genius-scenes-3).
+    required: false
+output:
+  files:
+    - workspace/agent-draft-$scene_id.md
+token_budget: 1200
 ---
 
-Write a first draft for scene **$id**:
+**Steps**
 
-1. Load its outline and voice constraints.
-2. Produce prose (≤ $max tokens if provided).
-3. Save as `workspace/drafts/$id/agent-draft-v1.md`.
-4. Do not critique or revise in this step.
+1. Load the scene card (`workspace/scene-cards/scene-$scene_id.md`).
+2. Load selected packets.
+3. Write ≤1200 words of prose respecting MRUs, Third Rail, and scene goals.
+4. Save as `agent-draft-$scene_id.md`.
