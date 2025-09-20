@@ -4,6 +4,17 @@
 
 This workspace provides a **three-stage pipeline** — Capture → Distillation → Production — backed by subagents, slash commands, and theory packets.
 
+This is primarily an experiment and learning project for context engineering. I'm using Claude Code CLI as my main scaffolding, but will be adding some docs to direct any AI agent to work within this space. I have very limited usage plans with the various models, so I bounce between Claude Code, Gemini CLI, and Copilot. When brainstorming and writing, I'll want to be able to quickly spin up whatever models I still have usage on and get right into it. I just really like the structure of Claude's subagents setup -- but Gemini won't use agents, but _can_ take the persona. You do _not_ have to use the slash commands. I've included them for future work/experimentation to automate the story generation process for game development. Humans are messier writers, but I want to algorithmatize the process for agents.
+
+I've outlined an example quick start / workflow below, but I'll often chat with Claude or ChatGPT in the browser to get a lot of ideas out, and then dump these in the project author notes. I'll want to add timestamps and tracking so the AI's don't read all of my notes when working unless I direct them to.
+
+I'm a huge fan of the following books on writing, and reference their theory heavily in this project:
+
+- **Anatomy of Story** – John Truby
+- **Scene & Structure** – Dwight Swain
+- **Story Genius** – Lisa Cron
+- **Storygrid** – Story Grid (Shawn Coyne)
+
 ---
 
 ## 🚀 Quick-Start: From Blank Page to Draft
@@ -25,7 +36,7 @@ This workspace provides a **three-stage pipeline** — Capture → Distillation 
 
 2. **Brainstorm (Capture Stage)**
 
-Use slash commands (e.g., `/idea`, `/outline_scene`, `/draft_scene`) to interact with subagents, or simply engage with Claude through the terminal conversationally. You do _not_ have to use the slash commands. I've included them for future work/experimentation to automate the story generation process for game dev.
+Use slash commands (e.g., `/idea`, `/outline_scene`, `/draft_scene`) to interact with subagents, or simply engage with Claude through the terminal conversationally.
 
 - Start Claude Code CLI in VS Code.
 - Run:
